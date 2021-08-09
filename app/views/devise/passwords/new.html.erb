@@ -1,0 +1,38 @@
+<div class="fondo-1">
+  <div class="container py-5">
+      <div class="row col-12 justify-content-center">
+        <div class=" card-general card-olv-contra">
+          <div class="text-center text-with-margin ">
+              <div>
+                <%= image_tag "logo_diente.png" %>
+              </div>
+              <div>
+                <h2>Restaurar contraseña</h2>
+                <p>Ingrese su correo electronico</p>
+              </div>
+
+              <div>
+                <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+                  <%= f.error_notification %>
+
+                  <div class="form-inputs">
+                    <%= f.input :email,
+                                required: true,
+                                autofocus: true,
+                                input_html: { autocomplete: "email" } %>
+                  </div>
+
+                  <div class="form-actions">
+                    <%= f.button :submit, "Se enviará un mail a su casilla de correo" %>
+                  </div>
+
+                <% end %>
+              </div>
+              <div class="">
+                <%= render "devise/shared/links", class: "btn btn-olvido"  %>
+              </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

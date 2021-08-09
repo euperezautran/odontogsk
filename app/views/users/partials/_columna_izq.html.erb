@@ -1,0 +1,27 @@
+<div class="card-general card-usuario mb-5">
+  <div class="mx-auto text-center">
+    <%= image_tag "doctora.png", style:"width: 100px" %>
+  </div>
+  <div class="text-center" >
+    <h5> Bienvenido <%= @user.first_name.capitalize;  %></h5>
+  </div>
+  <div class="">
+    <div><span><%=@user.first_name.capitalize %> <%=@user.last_name.capitalize%></span></div>
+    <div><span>Matricula: <%=@user.registration_number %></span></div>
+    <div><span><%=@user.province.capitalize %></span></div>
+  </div>
+</div>
+ <!-- card cheques restantes -->
+<div class="card-general card-cantidad-cheques my-5" style="background-color: #E58524;">
+  <div>
+    <p>Cheques restantes para este mes:</p>
+    <h4>50 de 50</h4>
+
+  </div>
+</div>
+  <!-- boton de deslogueo -->
+<div class="">
+  <%= image_tag "flecha-derecha.png" %>
+  <%= link_to "cerrar cesion", destroy_user_session_path, method: :delete, class: "btn btn-cerrar-cesion" %>
+</div>
+

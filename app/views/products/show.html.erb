@@ -1,0 +1,37 @@
+
+<div style="background-color: #333333; height: 200vh; ">
+
+  <div class="container text-center py-5 ">
+    <div class="card-general card-prod-final  " style="background-origin: #EFEFEF;">
+      <div class="div d-flex justify-content-center">
+
+        <h2 class="mt-4 font-mont">ODONTOCHEQUE</h2>
+      </div>
+        <div class="div d-flex">
+          <div class="div col-lg-6 m-5 datos-finales">
+            <div class="div">
+              <div>NOMBRE: <strong>Belen Mareque</strong></div>
+              <div>MATRICULA: <strong>123456</strong></div>
+              <div>PROVINCIA: <strong>CABA</strong></div>
+              <div>FECHA: <strong>29/04/21</strong></div>
+              <div>Nº: <strong>wgf348334kd87rhe2ppl2k</strong></div>
+              <div>descuento %: <strong>40</strong></div>
+              <div>EAN: <strong>7896015530006</strong></div>
+            </div>
+            <div class="mt-3" style="font-size: 12px;color: blue;">
+              <p>Para que este certificado sea valido debe contar con los datos del profesional en el cupón. El descuento aplica con la compra del producto detallado. El descuento sera valido durante los 15 días siguientes a la recomendación del odontólogo o hasta el día 30/12/2021 inclusive, lo que suceda primero.</p>
+            </div>
+          </div>
+          <div class="div col-lg-6 mt-4">
+            <%= image_tag "cheques/cheque_sensodyne_truewhite.jpg", size: '350' %>
+          </div>
+        </div>
+    </div>
+    <div class="my-2">
+      <!-- <button id="botonClick">Click</button> -->
+        <p id="areaContador"></p>
+        <%= link_to "Enviar", cheque_path(format: "pdf"), class: "btn btn-violeta", id: "botonClick" %>
+        <%= link_to "Volver", root_path, class: "btn btn-violeta" %>
+      </div>
+  </div>
+</div>

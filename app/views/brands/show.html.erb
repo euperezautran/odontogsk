@@ -1,0 +1,36 @@
+
+<div style="background-color: #333333; height: 300vh;">
+  <div class="container py-5">
+    <div class="row">
+
+      <div class="col-sm-12 col-md-3 col-lg-3 ">
+
+      </div>
+
+
+
+      <div class="col-sm-12 col-md-9 col-lg-9">
+        <div class="card-general card-productos mb-5">
+          <div class="d-flex justify-content-center mb-5">
+            <%= image_tag "stepper_2.png" %>
+          </div>
+          <div class="text-center">
+            <h3>SELECCIONE UN PRODUCTO</h3>
+          </div>
+          <div class="row row-cols-1 row-cols-md-3">
+            <% @brand.products.each do |product| %>
+              <div class="col-md-4 mt-5">
+                <div class="mr-3 d-flex justify-content-center align-items-center card-general card-producto-blanca">
+                  <div><%#= link_to "#{image_tag product.name, size: "200x190"}".html_safe, cheque_path(id: product.id, format: :pdf) %>
+                    <%= link_to "#{image_tag product.name, size: "200x190"}".html_safe, product_path(product.id)  %>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+   <div><%#= link_to "#{image_tag product.name, size: "200x190"}".html_safe, cheque_path(format: "pdf") %></div>
+</div>
