@@ -40963,3 +40963,95 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.9ms | Allocations: 18864)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2021-08-11 10:02:22 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IhoRYb7p8I9X/XAZLsYTULPh2ltpShuDxTMjMxTA+vFA4fxYSvXIbrdMgzeNPeIM0UPK+8EUrKfdYMKkdawuhA=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.7ms | Allocations: 2393)
+
+
+Started GET "/" for ::1 at 2021-08-11 10:02:22 -0300
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 318)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 10:02:22 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.1ms | Allocations: 10598)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 29)
+Completed 200 OK in 55ms (Views: 54.5ms | ActiveRecord: 0.0ms | Allocations: 22380)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 10:02:40 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3ps/J5fgPOmr/AwD2RaAQrw9l53J/Ca4fiMqJimE+WVobFs3DJB6+BZVqiPFmaQSL4/LTYZlNElhIj5P+FVIUw==", "user"=>{"username"=>"belen.mareque@gmail.com", "email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 262ms (ActiveRecord: 0.4ms | Allocations: 2814)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 10:02:40 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.2ms | Allocations: 1115)
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 4.7ms | Allocations: 3927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 38ms (Views: 34.8ms | ActiveRecord: 0.9ms | Allocations: 17624)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-08-11 10:44:47 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CC3ZY760oD6JhQzW8+Mfas3pL+iuHKoBfRo0598l0p0srvK1dRasoWbwTHX8skUS0O3z7LFcvvArubwYRIwx/g=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms | Allocations: 2409)
+
+
+Started GET "/" for ::1 at 2021-08-11 10:44:47 -0300
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 324)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 10:44:47 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.3ms | Allocations: 10556)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 66ms (Views: 64.6ms | ActiveRecord: 0.0ms | Allocations: 22338)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 11:03:50 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"bfVY2wal/1x9bb3xT8H8hqUxPHq52XeAPZN0k32dH5ecpp2Idv9UAT+RYBjDRAboNZCK4lR+54r3j7eFtFstyg==", "user"=>{"username"=>"belen.mareque@gmail.com", "email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 254ms (ActiveRecord: 0.9ms | Allocations: 2928)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 11:03:51 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 2.2ms | Allocations: 1115)
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 7.0ms | Allocations: 3927)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 25)
+Completed 200 OK in 73ms (Views: 67.7ms | ActiveRecord: 0.9ms | Allocations: 17654)
+
+
