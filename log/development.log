@@ -40620,3 +40620,346 @@ Sent data cheques/cheque.pdf (0.9ms)
 Completed 200 OK in 1025ms (Views: 0.5ms | ActiveRecord: 1.4ms | Allocations: 7169)
 
 
+Started GET "/" for ::1 at 2021-08-11 09:18:09 -0300
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 123.0ms | Allocations: 41854)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 1.1ms | Allocations: 191)
+Completed 200 OK in 290ms (Views: 240.8ms | ActiveRecord: 6.7ms | Allocations: 67460)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:18:13 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 10ms (ActiveRecord: 0.5ms | Allocations: 4538)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 09:18:13 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 2.6ms | Allocations: 1394)
+  [1m[36mBrand Load (0.8ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 16.3ms | Allocations: 7371)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 28)
+Completed 200 OK in 55ms (Views: 45.9ms | ActiveRecord: 4.2ms | Allocations: 22698)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-08-11 09:18:19 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"n0e+oGxVtVDGcBr2+32kJ0Vv5Oh+lkujKpKx5nEj60de2970PWWSHYDrLxrqAEMpMagaauDW7k9oAmZxVW+Qdw=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.7ms | Allocations: 3155)
+
+
+Started GET "/" for ::1 at 2021-08-11 09:18:19 -0300
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms | Allocations: 338)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:18:19 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 36.7ms | Allocations: 15234)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 29)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.0ms | Allocations: 28089)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:18:30 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"vU+w0rVw5Hs4gq1XcbdEZ39CRkqlA4u+30XtCcHGIEl76plsCMSNBYExyuKQDmjJVdoSdDP2kMoSktqncQ+fLA==", "user"=>{"email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 264ms (ActiveRecord: 0.5ms | Allocations: 4470)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"vU+w0rVw5Hs4gq1XcbdEZ39CRkqlA4u+30XtCcHGIEl76plsCMSNBYExyuKQDmjJVdoSdDP2kMoSktqncQ+fLA==", "user"=>{"email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.0ms | Allocations: 8125)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 16)
+Completed 200 OK in 277ms (Views: 40.6ms | ActiveRecord: 0.0ms | Allocations: 19812)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:18:34 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"OiPyHAVNVgVeOqEbHg1kIwt6I3uEdFZnUIcyXrDlPTX8htuiuPk/e+eJxq7/tEiNIeJ3RRKBTROdUAXwACyCUA==", "user"=>{"email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 262ms (ActiveRecord: 0.6ms | Allocations: 4229)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 09:18:34 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.2ms | Allocations: 1120)
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 4.9ms | Allocations: 3934)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 54ms (Views: 50.1ms | ActiveRecord: 0.8ms | Allocations: 17657)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-08-11 09:18:39 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"bLmn7m82anYQxkte1js+HahUwtjiYU9k4/HSHXd17gjwXGQlt5ftePxqbP1ijxL/kKtxM1aqmeHBxWEHvvA69Q=="}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.5ms | Allocations: 2290)
+
+
+Started GET "/" for ::1 at 2021-08-11 09:18:39 -0300
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 330)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:18:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 14.8ms | Allocations: 8179)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 51ms (Views: 49.2ms | ActiveRecord: 0.0ms | Allocations: 19961)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:18:52 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"AB/2GWXJ1rqwvzJZnr35PEKlaMg+Jf4OwFF6vYdTFL1yzOgisyR7zFK2DwDcN8FCtpkCbGLHrT9q7KW/rTfRRQ==", "user"=>{"email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 254ms (ActiveRecord: 0.5ms | Allocations: 1997)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"AB/2GWXJ1rqwvzJZnr35PEKlaMg+Jf4OwFF6vYdTFL1yzOgisyR7zFK2DwDcN8FCtpkCbGLHrT9q7KW/rTfRRQ==", "user"=>{"email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 11.1ms | Allocations: 8166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 16)
+Completed 200 OK in 273ms (Views: 39.6ms | ActiveRecord: 0.0ms | Allocations: 19840)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-08-11 09:19:06 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 533)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 27.2ms | Allocations: 15966)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 59ms (Views: 57.2ms | ActiveRecord: 0.0ms | Allocations: 28563)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:19:55 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 16.8ms | Allocations: 8169)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 52ms (Views: 51.2ms | ActiveRecord: 0.0ms | Allocations: 19963)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:20:19 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"st93NaPS/7baltjuo8OEKzUpVJyqpkJA/PD89bEs3JogAofLx+xoaklGKyfCz2/37+l+Zo60scVG0tFJ+ES1BA==", "user"=>{"email"=>"euperezautran@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "euperezautran@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.6ms | Allocations: 1969)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"st93NaPS/7baltjuo8OEKzUpVJyqpkJA/PD89bEs3JogAofLx+xoaklGKyfCz2/37+l+Zo60scVG0tFJ+ES1BA==", "user"=>{"email"=>"euperezautran@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 10.4ms | Allocations: 8166)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.0ms | Allocations: 16)
+Completed 200 OK in 300ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 19878)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:27:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.6ms | Allocations: 10910)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 62ms (Views: 59.6ms | ActiveRecord: 0.0ms | Allocations: 24404)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:28:05 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"1d8Yu15xLDi0urpBsyfEoiqJ81YipMCvYav5fXsoWaGnDAaAiJyBTlazhxjxrfzc3rWZ8n5Gk57LFiZ/UUycWQ==", "user"=>{"username"=>"belen.mareque@gmail.com", "email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 259ms (ActiveRecord: 0.8ms | Allocations: 4001)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 09:28:05 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.5ms | Allocations: 1342)
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 5.3ms | Allocations: 4499)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.8ms | Allocations: 18897)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-08-11 09:28:08 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Pjhv500tC8QxS1mwX50HrE7DdiJ0xA95JEzpKzIU4F5RCsqdkBwhR/kdmf1wMKTEDNK9TE5mZgETSh9jvQPSDw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 0.6ms | Allocations: 2283)
+
+
+Started GET "/" for ::1 at 2021-08-11 09:28:08 -0300
+Processing by PagesController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms | Allocations: 328)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:28:08 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 20.8ms | Allocations: 10569)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 29)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.0ms | Allocations: 22365)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:30:53 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 26.5ms | Allocations: 10879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 69ms (Views: 66.6ms | ActiveRecord: 0.0ms | Allocations: 24350)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:31:13 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 34.3ms | Allocations: 10896)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 76ms (Views: 74.0ms | ActiveRecord: 0.0ms | Allocations: 24393)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:31:49 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.1ms | Allocations: 10889)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 59ms (Views: 57.7ms | ActiveRecord: 0.0ms | Allocations: 24378)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:34:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 51.5ms | Allocations: 10881)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 99ms (Views: 95.7ms | ActiveRecord: 0.0ms | Allocations: 24385)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:34:33 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 25.5ms | Allocations: 10879)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 64ms (Views: 62.7ms | ActiveRecord: 0.0ms | Allocations: 24368)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:34:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 19.8ms | Allocations: 10565)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 56ms (Views: 54.4ms | ActiveRecord: 0.0ms | Allocations: 22353)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:34:58 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 45.6ms | Allocations: 10911)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.3ms | Allocations: 183)
+Completed 200 OK in 128ms (Views: 92.7ms | ActiveRecord: 0.0ms | Allocations: 24412)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 09:46:51 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 21.9ms | Allocations: 10565)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/eugenio/code/euperezautran/odonto/odontogsk/public/packs
+[Webpacker] Browserslist: caniuse-lite is outdated. Please run:
+npx browserslist@latest --update-db
+
+Why you should do it regularly:
+https://github.com/browserslist/browserslist#browsers-data-updating
+
+[Webpacker] Hash: a6d94d5b5507905f37c4
+Version: webpack 4.44.2
+Time: 1195ms
+Built at: 08/11/2021 9:46:55 AM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-82885e14fb5a71b77432.js    616 KiB  application  [emitted] [immutable]  application
+js/application-82885e14fb5a71b77432.js.map    755 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-82885e14fb5a71b77432.js js/application-82885e14fb5a71b77432.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 434 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.18 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 22)
+Completed 200 OK in 4255ms (Views: 4254.3ms | ActiveRecord: 0.0ms | Allocations: 111853)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-08-11 09:47:16 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"3/+AYng7zQBiDdUWeIyxb+44ZPC89e5IQLLsK9LQiMArBHG/PBSGMeIBqgFSB2BJCZ4MPGtF+6HHI6NZbKde7A==", "user"=>{"username"=>"belen.mareque@gmail.com", "email"=>"belen.mareque@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Entrar"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["email", "belen.mareque@gmail.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Completed 302 Found in 268ms (ActiveRecord: 1.0ms | Allocations: 4005)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 09:47:17 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:4:in `show'
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.7ms | Allocations: 1342)
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 5.4ms | Allocations: 4502)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 27)
+Completed 200 OK in 47ms (Views: 42.7ms | ActiveRecord: 0.9ms | Allocations: 18864)
+
+
