@@ -51,7 +51,8 @@ User.create!(
     email: "user@user.com",
     password: "123456",
     registration_number: 111111,
-    province: "CABA"
+    province: "CABA",
+    username: "euge"
   )
 
 puts 'creating cheque numbres'
