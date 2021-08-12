@@ -43565,3 +43565,138 @@ Processing by PagesController#index as HTML
 Completed 200 OK in 41ms (Views: 37.2ms | ActiveRecord: 0.3ms | Allocations: 14632)
 
 
+Started GET "/" for ::1 at 2021-08-11 23:31:01 -0300
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 210.6ms | Allocations: 73149)
+[Webpacker] Compiling...
+[Webpacker] Compiled all packs in /home/eugenio/code/euperezautran/odonto/odontogsk/public/packs
+[Webpacker] Hash: 8e7ad055070cec1e3999
+Version: webpack 4.46.0
+Time: 948ms
+Built at: 08/11/2021 11:31:04 PM
+                                     Asset       Size       Chunks                         Chunk Names
+    js/application-7b75d2aa8aa88b72a987.js    618 KiB  application  [emitted] [immutable]  application
+js/application-7b75d2aa8aa88b72a987.js.map    756 KiB  application  [emitted] [dev]        application
+                             manifest.json  364 bytes               [emitted]              
+Entrypoint application = js/application-7b75d2aa8aa88b72a987.js js/application-7b75d2aa8aa88b72a987.js.map
+[./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
+[./app/javascript/channels/index.js] 434 bytes {application} [built]
+[./app/javascript/packs/application.js] 1.18 KiB {application} [built]
+[./node_modules/webpack/buildin/global.js] (webpack)/buildin/global.js 472 bytes {application} [built]
+    + 6 hidden modules
+
+  Rendered shared/_flashes.html.erb (Duration: 0.5ms | Allocations: 191)
+Completed 200 OK in 2718ms (Views: 2669.7ms | ActiveRecord: 5.6ms | Allocations: 99241)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-08-11 23:31:06 -0300
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+Redirected to http://localhost:3000/users/7
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 9ms (ActiveRecord: 0.7ms | Allocations: 3803)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 23:31:06 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.6ms | Allocations: 999)
+  [1m[36mBrand Load (1.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 14.7ms | Allocations: 7611)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 28)
+Completed 200 OK in 31ms (Views: 21.4ms | ActiveRecord: 4.3ms | Allocations: 21910)
+
+
+Started GET "/brands/80" for ::1 at 2021-08-11 23:31:11 -0300
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrand Load (0.4ms)[0m  [1m[34mSELECT "brands".* FROM "brands" WHERE "brands"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:10:in `show'
+  Rendering brands/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.6ms | Allocations: 687)
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."brand_id" = $1[0m  [["brand_id", 80]]
+  ↳ app/views/brands/show.html.erb:23
+  Rendered brands/show.html.erb within layouts/application (Duration: 29.3ms | Allocations: 13818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 49ms (Views: 37.1ms | ActiveRecord: 4.4ms | Allocations: 27413)
+
+
+Started GET "/products/459" for ::1 at 2021-08-11 23:31:13 -0300
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"459"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 459], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:8:in `show'
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/show.html.erb within layouts/application (Duration: 1.7ms | Allocations: 874)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 19ms (Views: 13.9ms | ActiveRecord: 0.8ms | Allocations: 14550)
+
+
+Started GET "/cheques/459.pdf" for ::1 at 2021-08-11 23:31:15 -0300
+Processing by ChequesController#cheque as PDF
+  Parameters: {"id"=>"459"}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.8ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = $1 LIMIT $2[0m  [["id", 459], ["LIMIT", 1]]
+  ↳ app/controllers/cheques_controller.rb:5:in `cheque'
+  [1m[36mCheque Load (2.7ms)[0m  [1m[34mSELECT "cheques".* FROM "cheques" WHERE "cheques"."product_id" = $1 AND "cheques"."user_id" = $2 LIMIT $3[0m  [["product_id", 459], ["user_id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/cheques_controller.rb:6:in `cheque'
+  Rendering cheques/cheque.pdf.erb
+  Rendered cheques/cheque.pdf.erb (Duration: 7.4ms | Allocations: 1300)
+[wicked_pdf]: ["/home/eugenio/.rbenv/versions/2.6.6/bin/wkhtmltopdf", "file:////tmp/wicked_pdf20210811-26846-1f99ryg.html", "/tmp/wicked_pdf_generated_file20210811-26846-z5r0wi.pdf"]
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 1)
+Sent data cheques/cheque.pdf (1.4ms)
+Completed 200 OK in 1033ms (Views: 0.9ms | ActiveRecord: 7.5ms | Allocations: 7645)
+
+
+Started GET "/brands/80" for ::1 at 2021-08-11 23:31:19 -0300
+Processing by BrandsController#show as HTML
+  Parameters: {"id"=>"80"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mBrand Load (0.2ms)[0m  [1m[34mSELECT "brands".* FROM "brands" WHERE "brands"."id" = $1 LIMIT $2[0m  [["id", 80], ["LIMIT", 1]]
+  ↳ app/controllers/brands_controller.rb:10:in `show'
+  Rendering brands/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.1ms | Allocations: 685)
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."brand_id" = $1[0m  [["brand_id", 80]]
+  ↳ app/views/brands/show.html.erb:23
+  Rendered brands/show.html.erb within layouts/application (Duration: 9.9ms | Allocations: 5996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 40ms (Views: 35.2ms | ActiveRecord: 0.8ms | Allocations: 18889)
+
+
+Started GET "/users/7" for ::1 at 2021-08-11 23:31:20 -0300
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/partials/_columna_izq.html.erb (Duration: 1.1ms | Allocations: 674)
+  [1m[36mBrand Load (0.3ms)[0m  [1m[34mSELECT "brands".* FROM "brands"[0m
+  ↳ app/views/users/show.html.erb:19
+  Rendered users/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 3488)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 23)
+Completed 200 OK in 19ms (Views: 15.5ms | ActiveRecord: 0.5ms | Allocations: 15827)
+
+
+Started GET "/" for ::1 at 2021-08-11 23:31:20 -0300
+Processing by PagesController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering pages/index.html.erb within layouts/application
+  Rendered pages/index.html.erb within layouts/application (Duration: 2.2ms | Allocations: 702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered shared/_flashes.html.erb (Duration: 0.1ms | Allocations: 24)
+Completed 200 OK in 19ms (Views: 15.2ms | ActiveRecord: 0.3ms | Allocations: 13039)
+
+
