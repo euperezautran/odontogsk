@@ -21,7 +21,13 @@
 </div>
   <!-- boton de deslogueo -->
 <div class="">
-  <%= image_tag "flecha-derecha.png" %>
-  <%= link_to "cerrar cesion", destroy_user_session_path, method: :delete, class: "btn btn-cerrar-cesion" %>
+  <% if @brand.present? %>
+    <%= link_to "volver", user_path, class: "btn btn-cerrar-cesion text-center" %>
+  <% elsif @product.present? %>
+    <%= link_to "volver", brand_path, class: "btn btn-cerrar-cesion text-center" %>
+  <% elsif @user.present? %>
+    <%= link_to "cerrar sesion", destroy_user_session_path, method: :delete, class: "btn btn-cerrar-cesion text-center" %>
+  <% end %>
 </div>
+
 

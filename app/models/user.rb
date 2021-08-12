@@ -15,7 +15,7 @@ class User < ApplicationRecord
   validates :last_name, length: { in: 2..20 }, allow_blank: true
 
   has_many :cheques, dependent: :destroy
-
+  has_many :brands
   validate :registration_number_uniqueness
   def national?
     province == 'CABA'
