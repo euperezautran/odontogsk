@@ -16,6 +16,7 @@ class User < ApplicationRecord
 
   has_many :cheques, dependent: :destroy
   has_many :brands
+  has_many :products, dependent: :destroy
   validate :registration_number_uniqueness
   def national?
     province == 'CABA'

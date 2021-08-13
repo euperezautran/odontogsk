@@ -9,11 +9,11 @@
         <div class="div d-flex">
           <div class="div col-lg-6 m-5 datos-finales">
             <div class="div">
-              <div>NOMBRE: <strong>Bélen Mareque</strong></div>
+             <div>NOMBRE: <strong><%= @cheque.user.email %></strong></div>
               <div>MATRICULA: <strong>123456</strong></div>
               <div>PROVINCIA: <strong>CABA</strong></div>
               <div>FECHA: <strong>29/04/21</strong></div>
-              <div>Nº: <strong>wgf348334kd87rhe2ppl2k</strong></div>
+              <div>Nº: <strong><%= SecureRandom.urlsafe_base64 %></strong></div>
               <div>descuento %: <strong>40</strong></div>
               <div>EAN: <strong>7896015530006</strong></div>
             </div>
